@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        
+        #btn{
+            
+                position:relative; /* or absolute */
+                top: 50%;
+                left: 40%;
+
+            
+            
+        }
+        #span1{
+
+          position:fixed ;/* or absolute */
+                top: 42%;
+                left: 42%;
+                font-size:20px ;
+                
+        }
+        
+    </style>
+</head>
+<body id="bdy">
+     
+    <span id="span1"></span>
+    <button autofocus class="btn btn-dark" id="btn">Click Me to Change Color</button>
+
+  
+
+    <script>
+    
+
+      const btn=document.getElementById('btn')
+      const body=document.getElementById('bdy')
+      const span=document.getElementById('span1')
+      
+    
+      btn.addEventListener('click',function(){
+         
+        const rgbArray=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+        let hexColor='#'
+        for(let i=0;i<6;i++){
+            
+            //console.log(Math.floor(Math.random()*rgbArray.length))
+           hexColor+=rgbArray[Math.floor(Math.random()*rgbArray.length)]
+
+
+            //hexColor+=rgbArray[i]
+        }
+            //console.log(hexColor)
+        bdy.style.backgroundColor=hexColor
+        span.innerText=`Hex color: ${hexColor}`
+        
+        
+
+      })
+
+
+
+    </script>
+</body>
+</html>
